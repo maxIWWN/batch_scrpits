@@ -1,0 +1,132 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2.3.0                                 |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    object      sampleDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+setFormat                 raw;
+
+interpolationScheme       cellPoint;
+
+fields
+    ( 
+        alpha.water 
+    );
+
+sets
+    (
+        verticalLine1    //line StSt gerade
+        {
+            type                uniform;
+            axis                z;
+            
+            start               (0.752 7.2 1.9);
+            end                 (0.752 7.2 2.5);
+
+            nPoints             600;
+        }
+        verticalLine2    //line StSt gerade
+        {
+            type                uniform;
+            axis                z;
+            
+            start               (0.752 6.65 1.7);
+            end                 (0.752 6.65 2.3);
+
+            nPoints             600;
+        }
+        verticalLine3    //line StSt gerade
+        {
+            type                uniform;
+            axis                z;
+            
+            start               (0.752 6.1 1.7);
+            end                 (0.752 6.1 2.3);
+
+            nPoints             600;
+        }
+        verticalLine4    //line StSt gerade
+        {
+            type                uniform;
+            axis                z;
+            
+            start               (0.752 5.7 1.7);
+            end                 (0.752 5.7 2.3);
+
+            nPoints             600;
+        }
+        verticalLine5    //line StSt gerade
+        {
+            type                uniform;
+            axis                z;
+            
+            start               (0.752 5.15 1.5);
+            end                 (0.752 5.15 2.1);
+
+            nPoints             600;
+        }
+        verticalLine6    //line StSt gerade
+        {
+            type                uniform;
+            axis                z;
+            
+            start               (0.752 4.6 1.5);
+            end                 (0.752 4.6 2.1);;
+
+            nPoints             600;
+        }
+        verticalLine7    //line StSt gerade
+        {
+            type                uniform;
+            axis                z;
+            
+            start               (0.752 4.2 1.5);
+            end                 (0.752 4.2 2.1);
+
+            nPoints             600;
+        }
+        verticalLine8    //line StSt gerade
+        {
+            type                uniform;
+            axis                z;
+            
+            start               (0.752 3.65 1.3);
+            end                 (0.752 3.65 1.9);
+
+            nPoints             600;
+        }
+        verticalLine9    //line StSt gerade
+        {
+            type                uniform;
+            axis                z;
+            
+            start               (0.752 3.1 1.3);
+            end                 (0.752 3.1 1.9);
+
+            nPoints             600;
+        }
+
+        /*verticalLine    //line StSt gewendelt
+        {
+            type                uniform;
+            axis                z;
+            
+            start               (0.15 4.85 1.4);
+            end                 (0.15 4.85 2);
+            
+            nPoints             600;
+        }*/
+    );
+
+
+// *********************************************************************** //
