@@ -1,0 +1,682 @@
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2.3.1                                 |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : 2.3.1-bcfaaa7b8660
+Exec   : patchIntegrate alphaPhi10 ymax
+Date   : Jan 12 2019
+Time   : 14:20:37
+Host   : "wabauclu"
+PID    : 34674
+Case   : /home/ubclu/OpenFOAM/ubclu-2.3.1/run/10_steffstep/04_inter_5_becken_gerade_OW45_UW55_OF5.0
+nProcs : 1
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+--> FOAM Warning : 
+    From function IOobject::readHeader(Istream&)
+    in file db/IOobject/IOobjectReadHeader.C at line 89
+    Reading "/home/ubclu/OpenFOAM/ubclu-2.3.1/run/10_steffstep/04_inter_5_becken_gerade_OW45_UW55_OF5.0/40/uniform/time" at line 1
+    First token could not be read or is not the keyword 'FoamFile'
+
+Check header is of the form:
+
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2.3.1                                 |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    location    "40/uniform";
+    object      time;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+Create mesh for time = 40
+
+--> FOAM Warning : 
+    From function IOobject::readHeader(Istream&)
+    in file db/IOobject/IOobjectReadHeader.C at line 89
+    Reading "/home/ubclu/OpenFOAM/ubclu-2.3.1/run/10_steffstep/04_inter_5_becken_gerade_OW45_UW55_OF5.0/40/uniform/time" at line 1
+    First token could not be read or is not the keyword 'FoamFile'
+
+Check header is of the form:
+
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2.3.1                                 |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    location    "40/uniform";
+    object      time;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+Time = 40
+    Area vector of patch ymax[3] = (0 0.55477358 0)
+    Area magnitude of patch ymax[3] = 0.55477358
+    Reading surfaceScalarField alphaPhi10
+    Integral of alphaPhi10 over patch ymax[3] = -0.087032149
+
+Time = 40.1
+    Area vector of patch ymax[3] = (0 0.55477358 0)
+    Area magnitude of patch ymax[3] = 0.55477358
+    Reading surfaceScalarField alphaPhi10
+    Integral of alphaPhi10 over patch ymax[3] = -0.087197022
+
+Time = 40.2
+    Area vector of patch ymax[3] = (0 0.55477358 0)
+    Area magnitude of patch ymax[3] = 0.55477358
+    Reading surfaceScalarField alphaPhi10
+    Integral of alphaPhi10 over patch ymax[3] = -0.087274317
+
+Time = 40.3
+    Area vector of patch ymax[3] = (0 0.55477358 0)
+    Area magnitude of patch ymax[3] = 0.55477358
+    Reading surfaceScalarField alphaPhi10
+    Integral of alphaPhi10 over patch ymax[3] = -0.087369548
+
+Time = 40.4
+    Area vector of patch ymax[3] = (0 0.55477358 0)
+    Area magnitude of patch ymax[3] = 0.55477358
+    Reading surfaceScalarField alphaPhi10
+    Integral of alphaPhi10 over patch ymax[3] = -0.087168304
+
+Time = 40.5
+    Area vector of patch ymax[3] = (0 0.55477358 0)
+    Area magnitude of patch ymax[3] = 0.55477358
+    Reading surfaceScalarField alphaPhi10
+    Integral of alphaPhi10 over patch ymax[3] = -0.086726597
+
+Time = 40.6
+    Area vector of patch ymax[3] = (0 0.55477358 0)
+    Area magnitude of patch ymax[3] = 0.55477358
+    Reading surfaceScalarField alphaPhi10
+    Integral of alphaPhi10 over patch ymax[3] = -0.086333929
+
+Time = 40.7
+    Area vector of patch ymax[3] = (0 0.55477358 0)
+    Area magnitude of patch ymax[3] = 0.55477358
+    Reading surfaceScalarField alphaPhi10
+    Integral of alphaPhi10 over patch ymax[3] = -0.086155439
+
+Time = 40.8
+    Area vector of patch ymax[3] = (0 0.55477358 0)
+    Area magnitude of patch ymax[3] = 0.55477358
+    Reading surfaceScalarField alphaPhi10
+    Integral of alphaPhi10 over patch ymax[3] = -0.086135218
+
+Time = 40.9
+    Area vector of patch ymax[3] = (0 0.55477358 0)
+    Area magnitude of patch ymax[3] = 0.55477358
+    Reading surfaceScalarField alphaPhi10
+    Integral of alphaPhi10 over patch ymax[3] = -0.085895849
+
+Time = 41
+    Area vector of patch ymax[3] = (0 0.55477358 0)
+    Area magnitude of patch ymax[3] = 0.55477358
+    Reading surfaceScalarField alphaPhi10
+    Integral of alphaPhi10 over patch ymax[3] = -0.085663417
+
+Time = 41.1
+    Area vector of patch ymax[3] = (0 0.55477358 0)
+    Area magnitude of patch ymax[3] = 0.55477358
+    Reading surfaceScalarField alphaPhi10
+    Integral of alphaPhi10 over patch ymax[3] = -0.085626088
+
+Time = 41.2
+    Area vector of patch ymax[3] = (0 0.55477358 0)
+    Area magnitude of patch ymax[3] = 0.55477358
+    Reading surfaceScalarField alphaPhi10
+    Integral of alphaPhi10 over patch ymax[3] = -0.085822825
+
+Time = 41.3
+    Area vector of patch ymax[3] = (0 0.55477358 0)
+    Area magnitude of patch ymax[3] = 0.55477358
+    Reading surfaceScalarField alphaPhi10
+    Integral of alphaPhi10 over patch ymax[3] = -0.08621531
+
+Time = 41.4
+    Area vector of patch ymax[3] = (0 0.55477358 0)
+    Area magnitude of patch ymax[3] = 0.55477358
+    Reading surfaceScalarField alphaPhi10
+    Integral of alphaPhi10 over patch ymax[3] = -0.086536454
+
+Time = 41.5
+    Area vector of patch ymax[3] = (0 0.55477358 0)
+    Area magnitude of patch ymax[3] = 0.55477358
+    Reading surfaceScalarField alphaPhi10
+    Integral of alphaPhi10 over patch ymax[3] = -0.086728852
+
+Time = 41.6
+    Area vector of patch ymax[3] = (0 0.55477358 0)
+    Area magnitude of patch ymax[3] = 0.55477358
+    Reading surfaceScalarField alphaPhi10
+    Integral of alphaPhi10 over patch ymax[3] = -0.086895508
+
+Time = 41.7
+    Area vector of patch ymax[3] = (0 0.55477358 0)
+    Area magnitude of patch ymax[3] = 0.55477358
+    Reading surfaceScalarField alphaPhi10
+    Integral of alphaPhi10 over patch ymax[3] = -0.087048301
+
+Time = 41.8
+    Area vector of patch ymax[3] = (0 0.55477358 0)
+    Area magnitude of patch ymax[3] = 0.55477358
+    Reading surfaceScalarField alphaPhi10
+    Integral of alphaPhi10 over patch ymax[3] = -0.087196413
+
+Time = 41.9
+    Area vector of patch ymax[3] = (0 0.55477358 0)
+    Area magnitude of patch ymax[3] = 0.55477358
+    Reading surfaceScalarField alphaPhi10
+    Integral of alphaPhi10 over patch ymax[3] = -0.087391674
+
+Time = 42
+    Area vector of patch ymax[3] = (0 0.55477358 0)
+    Area magnitude of patch ymax[3] = 0.55477358
+    Reading surfaceScalarField alphaPhi10
+    Integral of alphaPhi10 over patch ymax[3] = -0.087639621
+
+Time = 42.1
+    Area vector of patch ymax[3] = (0 0.55477358 0)
+    Area magnitude of patch ymax[3] = 0.55477358
+    Reading surfaceScalarField alphaPhi10
+    Integral of alphaPhi10 over patch ymax[3] = -0.087802533
+
+Time = 42.2
+    Area vector of patch ymax[3] = (0 0.55477358 0)
+    Area magnitude of patch ymax[3] = 0.55477358
+    Reading surfaceScalarField alphaPhi10
+    Integral of alphaPhi10 over patch ymax[3] = -0.087888929
+
+Time = 42.3
+    Area vector of patch ymax[3] = (0 0.55477358 0)
+    Area magnitude of patch ymax[3] = 0.55477358
+    Reading surfaceScalarField alphaPhi10
+    Integral of alphaPhi10 over patch ymax[3] = -0.08805244
+
+Time = 42.4
+    Area vector of patch ymax[3] = (0 0.55477358 0)
+    Area magnitude of patch ymax[3] = 0.55477358
+    Reading surfaceScalarField alphaPhi10
+    Integral of alphaPhi10 over patch ymax[3] = -0.088243458
+
+Time = 42.5
+    Area vector of patch ymax[3] = (0 0.55477358 0)
+    Area magnitude of patch ymax[3] = 0.55477358
+    Reading surfaceScalarField alphaPhi10
+    Integral of alphaPhi10 over patch ymax[3] = -0.088416504
+
+Time = 42.6
+    Area vector of patch ymax[3] = (0 0.55477358 0)
+    Area magnitude of patch ymax[3] = 0.55477358
+    Reading surfaceScalarField alphaPhi10
+    Integral of alphaPhi10 over patch ymax[3] = -0.088629442
+
+Time = 42.7
+    Area vector of patch ymax[3] = (0 0.55477358 0)
+    Area magnitude of patch ymax[3] = 0.55477358
+    Reading surfaceScalarField alphaPhi10
+    Integral of alphaPhi10 over patch ymax[3] = -0.088869764
+
+Time = 42.8
+    Area vector of patch ymax[3] = (0 0.55477358 0)
+    Area magnitude of patch ymax[3] = 0.55477358
+    Reading surfaceScalarField alphaPhi10
+    Integral of alphaPhi10 over patch ymax[3] = -0.088887603
+
+Time = 42.9
+    Area vector of patch ymax[3] = (0 0.55477358 0)
+    Area magnitude of patch ymax[3] = 0.55477358
+    Reading surfaceScalarField alphaPhi10
+    Integral of alphaPhi10 over patch ymax[3] = -0.08872472
+
+Time = 43
+    Area vector of patch ymax[3] = (0 0.55477358 0)
+    Area magnitude of patch ymax[3] = 0.55477358
+    Reading surfaceScalarField alphaPhi10
+    Integral of alphaPhi10 over patch ymax[3] = -0.088516832
+
+Time = 43.1
+    Area vector of patch ymax[3] = (0 0.55477358 0)
+    Area magnitude of patch ymax[3] = 0.55477358
+    Reading surfaceScalarField alphaPhi10
+    Integral of alphaPhi10 over patch ymax[3] = -0.08834871
+
+Time = 43.2
+    Area vector of patch ymax[3] = (0 0.55477358 0)
+    Area magnitude of patch ymax[3] = 0.55477358
+    Reading surfaceScalarField alphaPhi10
+    Integral of alphaPhi10 over patch ymax[3] = -0.08819419
+
+Time = 43.3
+    Area vector of patch ymax[3] = (0 0.55477358 0)
+    Area magnitude of patch ymax[3] = 0.55477358
+    Reading surfaceScalarField alphaPhi10
+    Integral of alphaPhi10 over patch ymax[3] = -0.088063821
+
+Time = 43.4
+    Area vector of patch ymax[3] = (0 0.55477358 0)
+    Area magnitude of patch ymax[3] = 0.55477358
+    Reading surfaceScalarField alphaPhi10
+    Integral of alphaPhi10 over patch ymax[3] = -0.087906075
+
+Time = 43.5
+    Area vector of patch ymax[3] = (0 0.55477358 0)
+    Area magnitude of patch ymax[3] = 0.55477358
+    Reading surfaceScalarField alphaPhi10
+    Integral of alphaPhi10 over patch ymax[3] = -0.087673208
+
+Time = 43.6
+    Area vector of patch ymax[3] = (0 0.55477358 0)
+    Area magnitude of patch ymax[3] = 0.55477358
+    Reading surfaceScalarField alphaPhi10
+    Integral of alphaPhi10 over patch ymax[3] = -0.0875658
+
+Time = 43.7
+    Area vector of patch ymax[3] = (0 0.55477358 0)
+    Area magnitude of patch ymax[3] = 0.55477358
+    Reading surfaceScalarField alphaPhi10
+    Integral of alphaPhi10 over patch ymax[3] = -0.087717338
+
+Time = 43.8
+    Area vector of patch ymax[3] = (0 0.55477358 0)
+    Area magnitude of patch ymax[3] = 0.55477358
+    Reading surfaceScalarField alphaPhi10
+    Integral of alphaPhi10 over patch ymax[3] = -0.087691857
+
+Time = 43.9
+    Area vector of patch ymax[3] = (0 0.55477358 0)
+    Area magnitude of patch ymax[3] = 0.55477358
+    Reading surfaceScalarField alphaPhi10
+    Integral of alphaPhi10 over patch ymax[3] = -0.087327535
+
+Time = 44
+    Area vector of patch ymax[3] = (0 0.55477358 0)
+    Area magnitude of patch ymax[3] = 0.55477358
+    Reading surfaceScalarField alphaPhi10
+    Integral of alphaPhi10 over patch ymax[3] = -0.087085185
+
+Time = 44.1
+    Area vector of patch ymax[3] = (0 0.55477358 0)
+    Area magnitude of patch ymax[3] = 0.55477358
+    Reading surfaceScalarField alphaPhi10
+    Integral of alphaPhi10 over patch ymax[3] = -0.087011951
+
+Time = 44.2
+    Area vector of patch ymax[3] = (0 0.55477358 0)
+    Area magnitude of patch ymax[3] = 0.55477358
+    Reading surfaceScalarField alphaPhi10
+    Integral of alphaPhi10 over patch ymax[3] = -0.08687645
+
+Time = 44.3
+    Area vector of patch ymax[3] = (0 0.55477358 0)
+    Area magnitude of patch ymax[3] = 0.55477358
+    Reading surfaceScalarField alphaPhi10
+    Integral of alphaPhi10 over patch ymax[3] = -0.086508433
+
+Time = 44.4
+    Area vector of patch ymax[3] = (0 0.55477358 0)
+    Area magnitude of patch ymax[3] = 0.55477358
+    Reading surfaceScalarField alphaPhi10
+    Integral of alphaPhi10 over patch ymax[3] = -0.086199239
+
+Time = 44.5
+    Area vector of patch ymax[3] = (0 0.55477358 0)
+    Area magnitude of patch ymax[3] = 0.55477358
+    Reading surfaceScalarField alphaPhi10
+    Integral of alphaPhi10 over patch ymax[3] = -0.086114802
+
+Time = 44.6
+    Area vector of patch ymax[3] = (0 0.55477358 0)
+    Area magnitude of patch ymax[3] = 0.55477358
+    Reading surfaceScalarField alphaPhi10
+    Integral of alphaPhi10 over patch ymax[3] = -0.08612313
+
+Time = 44.7
+    Area vector of patch ymax[3] = (0 0.55477358 0)
+    Area magnitude of patch ymax[3] = 0.55477358
+    Reading surfaceScalarField alphaPhi10
+    Integral of alphaPhi10 over patch ymax[3] = -0.086108643
+
+Time = 44.8
+    Area vector of patch ymax[3] = (0 0.55477358 0)
+    Area magnitude of patch ymax[3] = 0.55477358
+    Reading surfaceScalarField alphaPhi10
+    Integral of alphaPhi10 over patch ymax[3] = -0.086130575
+
+Time = 44.9
+    Area vector of patch ymax[3] = (0 0.55477358 0)
+    Area magnitude of patch ymax[3] = 0.55477358
+    Reading surfaceScalarField alphaPhi10
+    Integral of alphaPhi10 over patch ymax[3] = -0.086159799
+
+Time = 45
+    Area vector of patch ymax[3] = (0 0.55477358 0)
+    Area magnitude of patch ymax[3] = 0.55477358
+    Reading surfaceScalarField alphaPhi10
+    Integral of alphaPhi10 over patch ymax[3] = -0.086198352
+
+Time = 45.1
+    Area vector of patch ymax[3] = (0 0.55477358 0)
+    Area magnitude of patch ymax[3] = 0.55477358
+    Reading surfaceScalarField alphaPhi10
+    Integral of alphaPhi10 over patch ymax[3] = -0.086359015
+
+Time = 45.2
+    Area vector of patch ymax[3] = (0 0.55477358 0)
+    Area magnitude of patch ymax[3] = 0.55477358
+    Reading surfaceScalarField alphaPhi10
+    Integral of alphaPhi10 over patch ymax[3] = -0.086539109
+
+Time = 45.3
+    Area vector of patch ymax[3] = (0 0.55477358 0)
+    Area magnitude of patch ymax[3] = 0.55477358
+    Reading surfaceScalarField alphaPhi10
+    Integral of alphaPhi10 over patch ymax[3] = -0.086753848
+
+Time = 45.4
+    Area vector of patch ymax[3] = (0 0.55477358 0)
+    Area magnitude of patch ymax[3] = 0.55477358
+    Reading surfaceScalarField alphaPhi10
+    Integral of alphaPhi10 over patch ymax[3] = -0.086753336
+
+Time = 45.5
+    Area vector of patch ymax[3] = (0 0.55477358 0)
+    Area magnitude of patch ymax[3] = 0.55477358
+    Reading surfaceScalarField alphaPhi10
+    Integral of alphaPhi10 over patch ymax[3] = -0.086613354
+
+Time = 45.6
+    Area vector of patch ymax[3] = (0 0.55477358 0)
+    Area magnitude of patch ymax[3] = 0.55477358
+    Reading surfaceScalarField alphaPhi10
+    Integral of alphaPhi10 over patch ymax[3] = -0.08648443
+
+Time = 45.7
+    Area vector of patch ymax[3] = (0 0.55477358 0)
+    Area magnitude of patch ymax[3] = 0.55477358
+    Reading surfaceScalarField alphaPhi10
+    Integral of alphaPhi10 over patch ymax[3] = -0.086504528
+
+Time = 45.8
+    Area vector of patch ymax[3] = (0 0.55477358 0)
+    Area magnitude of patch ymax[3] = 0.55477358
+    Reading surfaceScalarField alphaPhi10
+    Integral of alphaPhi10 over patch ymax[3] = -0.086665002
+
+Time = 45.9
+    Area vector of patch ymax[3] = (0 0.55477358 0)
+    Area magnitude of patch ymax[3] = 0.55477358
+    Reading surfaceScalarField alphaPhi10
+    Integral of alphaPhi10 over patch ymax[3] = -0.086849776
+
+Time = 46
+    Area vector of patch ymax[3] = (0 0.55477358 0)
+    Area magnitude of patch ymax[3] = 0.55477358
+    Reading surfaceScalarField alphaPhi10
+    Integral of alphaPhi10 over patch ymax[3] = -0.086941314
+
+Time = 46.1
+    Area vector of patch ymax[3] = (0 0.55477358 0)
+    Area magnitude of patch ymax[3] = 0.55477358
+    Reading surfaceScalarField alphaPhi10
+    Integral of alphaPhi10 over patch ymax[3] = -0.087207338
+
+Time = 46.2
+    Area vector of patch ymax[3] = (0 0.55477358 0)
+    Area magnitude of patch ymax[3] = 0.55477358
+    Reading surfaceScalarField alphaPhi10
+    Integral of alphaPhi10 over patch ymax[3] = -0.087432654
+
+Time = 46.3
+    Area vector of patch ymax[3] = (0 0.55477358 0)
+    Area magnitude of patch ymax[3] = 0.55477358
+    Reading surfaceScalarField alphaPhi10
+    Integral of alphaPhi10 over patch ymax[3] = -0.087512664
+
+Time = 46.4
+    Area vector of patch ymax[3] = (0 0.55477358 0)
+    Area magnitude of patch ymax[3] = 0.55477358
+    Reading surfaceScalarField alphaPhi10
+    Integral of alphaPhi10 over patch ymax[3] = -0.087550391
+
+Time = 46.5
+    Area vector of patch ymax[3] = (0 0.55477358 0)
+    Area magnitude of patch ymax[3] = 0.55477358
+    Reading surfaceScalarField alphaPhi10
+    Integral of alphaPhi10 over patch ymax[3] = -0.087485763
+
+Time = 46.6
+    Area vector of patch ymax[3] = (0 0.55477358 0)
+    Area magnitude of patch ymax[3] = 0.55477358
+    Reading surfaceScalarField alphaPhi10
+    Integral of alphaPhi10 over patch ymax[3] = -0.087448609
+
+Time = 46.7
+    Area vector of patch ymax[3] = (0 0.55477358 0)
+    Area magnitude of patch ymax[3] = 0.55477358
+    Reading surfaceScalarField alphaPhi10
+    Integral of alphaPhi10 over patch ymax[3] = -0.087406952
+
+Time = 46.8
+    Area vector of patch ymax[3] = (0 0.55477358 0)
+    Area magnitude of patch ymax[3] = 0.55477358
+    Reading surfaceScalarField alphaPhi10
+    Integral of alphaPhi10 over patch ymax[3] = -0.087415697
+
+Time = 46.9
+    Area vector of patch ymax[3] = (0 0.55477358 0)
+    Area magnitude of patch ymax[3] = 0.55477358
+    Reading surfaceScalarField alphaPhi10
+    Integral of alphaPhi10 over patch ymax[3] = -0.087497821
+
+Time = 47
+    Area vector of patch ymax[3] = (0 0.55477358 0)
+    Area magnitude of patch ymax[3] = 0.55477358
+    Reading surfaceScalarField alphaPhi10
+    Integral of alphaPhi10 over patch ymax[3] = -0.087510783
+
+Time = 47.1
+    Area vector of patch ymax[3] = (0 0.55477358 0)
+    Area magnitude of patch ymax[3] = 0.55477358
+    Reading surfaceScalarField alphaPhi10
+    Integral of alphaPhi10 over patch ymax[3] = -0.087365005
+
+Time = 47.2
+    Area vector of patch ymax[3] = (0 0.55477358 0)
+    Area magnitude of patch ymax[3] = 0.55477358
+    Reading surfaceScalarField alphaPhi10
+    Integral of alphaPhi10 over patch ymax[3] = -0.087206812
+
+Time = 47.3
+    Area vector of patch ymax[3] = (0 0.55477358 0)
+    Area magnitude of patch ymax[3] = 0.55477358
+    Reading surfaceScalarField alphaPhi10
+    Integral of alphaPhi10 over patch ymax[3] = -0.087101347
+
+Time = 47.4
+    Area vector of patch ymax[3] = (0 0.55477358 0)
+    Area magnitude of patch ymax[3] = 0.55477358
+    Reading surfaceScalarField alphaPhi10
+    Integral of alphaPhi10 over patch ymax[3] = -0.087048408
+
+Time = 47.5
+    Area vector of patch ymax[3] = (0 0.55477358 0)
+    Area magnitude of patch ymax[3] = 0.55477358
+    Reading surfaceScalarField alphaPhi10
+    Integral of alphaPhi10 over patch ymax[3] = -0.087113071
+
+Time = 47.6
+    Area vector of patch ymax[3] = (0 0.55477358 0)
+    Area magnitude of patch ymax[3] = 0.55477358
+    Reading surfaceScalarField alphaPhi10
+    Integral of alphaPhi10 over patch ymax[3] = -0.087052219
+
+Time = 47.7
+    Area vector of patch ymax[3] = (0 0.55477358 0)
+    Area magnitude of patch ymax[3] = 0.55477358
+    Reading surfaceScalarField alphaPhi10
+    Integral of alphaPhi10 over patch ymax[3] = -0.086882872
+
+Time = 47.8
+    Area vector of patch ymax[3] = (0 0.55477358 0)
+    Area magnitude of patch ymax[3] = 0.55477358
+    Reading surfaceScalarField alphaPhi10
+    Integral of alphaPhi10 over patch ymax[3] = -0.086685062
+
+Time = 47.9
+    Area vector of patch ymax[3] = (0 0.55477358 0)
+    Area magnitude of patch ymax[3] = 0.55477358
+    Reading surfaceScalarField alphaPhi10
+    Integral of alphaPhi10 over patch ymax[3] = -0.086365867
+
+Time = 48
+    Area vector of patch ymax[3] = (0 0.55477358 0)
+    Area magnitude of patch ymax[3] = 0.55477358
+    Reading surfaceScalarField alphaPhi10
+    Integral of alphaPhi10 over patch ymax[3] = -0.086375213
+
+Time = 48.1
+    Area vector of patch ymax[3] = (0 0.55477358 0)
+    Area magnitude of patch ymax[3] = 0.55477358
+    Reading surfaceScalarField alphaPhi10
+    Integral of alphaPhi10 over patch ymax[3] = -0.086548051
+
+Time = 48.2
+    Area vector of patch ymax[3] = (0 0.55477358 0)
+    Area magnitude of patch ymax[3] = 0.55477358
+    Reading surfaceScalarField alphaPhi10
+    Integral of alphaPhi10 over patch ymax[3] = -0.086699847
+
+Time = 48.3
+    Area vector of patch ymax[3] = (0 0.55477358 0)
+    Area magnitude of patch ymax[3] = 0.55477358
+    Reading surfaceScalarField alphaPhi10
+    Integral of alphaPhi10 over patch ymax[3] = -0.086775308
+
+Time = 48.4
+    Area vector of patch ymax[3] = (0 0.55477358 0)
+    Area magnitude of patch ymax[3] = 0.55477358
+    Reading surfaceScalarField alphaPhi10
+    Integral of alphaPhi10 over patch ymax[3] = -0.086742669
+
+Time = 48.5
+    Area vector of patch ymax[3] = (0 0.55477358 0)
+    Area magnitude of patch ymax[3] = 0.55477358
+    Reading surfaceScalarField alphaPhi10
+    Integral of alphaPhi10 over patch ymax[3] = -0.086497364
+
+Time = 48.6
+    Area vector of patch ymax[3] = (0 0.55477358 0)
+    Area magnitude of patch ymax[3] = 0.55477358
+    Reading surfaceScalarField alphaPhi10
+    Integral of alphaPhi10 over patch ymax[3] = -0.0861676
+
+Time = 48.7
+    Area vector of patch ymax[3] = (0 0.55477358 0)
+    Area magnitude of patch ymax[3] = 0.55477358
+    Reading surfaceScalarField alphaPhi10
+    Integral of alphaPhi10 over patch ymax[3] = -0.085781091
+
+Time = 48.8
+    Area vector of patch ymax[3] = (0 0.55477358 0)
+    Area magnitude of patch ymax[3] = 0.55477358
+    Reading surfaceScalarField alphaPhi10
+    Integral of alphaPhi10 over patch ymax[3] = -0.085500759
+
+Time = 48.9
+    Area vector of patch ymax[3] = (0 0.55477358 0)
+    Area magnitude of patch ymax[3] = 0.55477358
+    Reading surfaceScalarField alphaPhi10
+    Integral of alphaPhi10 over patch ymax[3] = -0.085379859
+
+Time = 49
+    Area vector of patch ymax[3] = (0 0.55477358 0)
+    Area magnitude of patch ymax[3] = 0.55477358
+    Reading surfaceScalarField alphaPhi10
+    Integral of alphaPhi10 over patch ymax[3] = -0.085341572
+
+Time = 49.1
+    Area vector of patch ymax[3] = (0 0.55477358 0)
+    Area magnitude of patch ymax[3] = 0.55477358
+    Reading surfaceScalarField alphaPhi10
+    Integral of alphaPhi10 over patch ymax[3] = -0.085233579
+
+Time = 49.2
+    Area vector of patch ymax[3] = (0 0.55477358 0)
+    Area magnitude of patch ymax[3] = 0.55477358
+    Reading surfaceScalarField alphaPhi10
+    Integral of alphaPhi10 over patch ymax[3] = -0.085129741
+
+Time = 49.3
+    Area vector of patch ymax[3] = (0 0.55477358 0)
+    Area magnitude of patch ymax[3] = 0.55477358
+    Reading surfaceScalarField alphaPhi10
+    Integral of alphaPhi10 over patch ymax[3] = -0.085091713
+
+Time = 49.4
+    Area vector of patch ymax[3] = (0 0.55477358 0)
+    Area magnitude of patch ymax[3] = 0.55477358
+    Reading surfaceScalarField alphaPhi10
+    Integral of alphaPhi10 over patch ymax[3] = -0.085316074
+
+Time = 49.5
+    Area vector of patch ymax[3] = (0 0.55477358 0)
+    Area magnitude of patch ymax[3] = 0.55477358
+    Reading surfaceScalarField alphaPhi10
+    Integral of alphaPhi10 over patch ymax[3] = -0.085745961
+
+Time = 49.6
+    Area vector of patch ymax[3] = (0 0.55477358 0)
+    Area magnitude of patch ymax[3] = 0.55477358
+    Reading surfaceScalarField alphaPhi10
+    Integral of alphaPhi10 over patch ymax[3] = -0.086053017
+
+Time = 49.7
+    Area vector of patch ymax[3] = (0 0.55477358 0)
+    Area magnitude of patch ymax[3] = 0.55477358
+    Reading surfaceScalarField alphaPhi10
+    Integral of alphaPhi10 over patch ymax[3] = -0.086205711
+
+Time = 49.8
+    Area vector of patch ymax[3] = (0 0.55477358 0)
+    Area magnitude of patch ymax[3] = 0.55477358
+    Reading surfaceScalarField alphaPhi10
+    Integral of alphaPhi10 over patch ymax[3] = -0.0862373
+
+Time = 49.9
+    Area vector of patch ymax[3] = (0 0.55477358 0)
+    Area magnitude of patch ymax[3] = 0.55477358
+    Reading surfaceScalarField alphaPhi10
+    Integral of alphaPhi10 over patch ymax[3] = -0.086308823
+
+Time = 50
+    Area vector of patch ymax[3] = (0 0.55477358 0)
+    Area magnitude of patch ymax[3] = 0.55477358
+    Reading surfaceScalarField alphaPhi10
+    Integral of alphaPhi10 over patch ymax[3] = -0.086353134
+
+End
+

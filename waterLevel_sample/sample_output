@@ -1,0 +1,289 @@
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2.3.1                                 |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : 2.3.1-bcfaaa7b8660
+Exec   : sample
+Date   : Jan 11 2019
+Time   : 13:02:17
+Host   : "wabauclu"
+PID    : 14631
+Case   : /home/ubclu/OpenFOAM/ubclu-2.3.1/run/10_steffstep/04_inter_5_becken_gerade_OW45_UW55_OF5.0
+nProcs : 1
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+--> FOAM Warning : 
+    From function IOobject::readHeader(Istream&)
+    in file db/IOobject/IOobjectReadHeader.C at line 89
+    Reading "/home/ubclu/OpenFOAM/ubclu-2.3.1/run/10_steffstep/04_inter_5_becken_gerade_OW45_UW55_OF5.0/40/uniform/time" at line 1
+    First token could not be read or is not the keyword 'FoamFile'
+
+Check header is of the form:
+
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2.3.1                                 |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    location    "40/uniform";
+    object      time;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+Create mesh for time = 40
+
+Reading set description:
+    verticalLine1
+    verticalLine2
+    verticalLine3
+    verticalLine4
+    verticalLine5
+    verticalLine6
+    verticalLine7
+    verticalLine8
+    verticalLine9
+
+--> FOAM Warning : 
+    From function IOobject::readHeader(Istream&)
+    in file db/IOobject/IOobjectReadHeader.C at line 89
+    Reading "/home/ubclu/OpenFOAM/ubclu-2.3.1/run/10_steffstep/04_inter_5_becken_gerade_OW45_UW55_OF5.0/40/uniform/time" at line 1
+    First token could not be read or is not the keyword 'FoamFile'
+
+Check header is of the form:
+
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2.3.1                                 |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    location    "40/uniform";
+    object      time;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+Time = 40
+
+Time = 40.1
+
+Time = 40.2
+
+Time = 40.3
+
+Time = 40.4
+
+Time = 40.5
+
+Time = 40.6
+
+Time = 40.7
+
+Time = 40.8
+
+Time = 40.9
+
+Time = 41
+
+Time = 41.1
+
+Time = 41.2
+
+Time = 41.3
+
+Time = 41.4
+
+Time = 41.5
+
+Time = 41.6
+
+Time = 41.7
+
+Time = 41.8
+
+Time = 41.9
+
+Time = 42
+
+Time = 42.1
+
+Time = 42.2
+
+Time = 42.3
+
+Time = 42.4
+
+Time = 42.5
+
+Time = 42.6
+
+Time = 42.7
+
+Time = 42.8
+
+Time = 42.9
+
+Time = 43
+
+Time = 43.1
+
+Time = 43.2
+
+Time = 43.3
+
+Time = 43.4
+
+Time = 43.5
+
+Time = 43.6
+
+Time = 43.7
+
+Time = 43.8
+
+Time = 43.9
+
+Time = 44
+
+Time = 44.1
+
+Time = 44.2
+
+Time = 44.3
+
+Time = 44.4
+
+Time = 44.5
+
+Time = 44.6
+
+Time = 44.7
+
+Time = 44.8
+
+Time = 44.9
+
+Time = 45
+
+Time = 45.1
+
+Time = 45.2
+
+Time = 45.3
+
+Time = 45.4
+
+Time = 45.5
+
+Time = 45.6
+
+Time = 45.7
+
+Time = 45.8
+
+Time = 45.9
+
+Time = 46
+
+Time = 46.1
+
+Time = 46.2
+
+Time = 46.3
+
+Time = 46.4
+
+Time = 46.5
+
+Time = 46.6
+
+Time = 46.7
+
+Time = 46.8
+
+Time = 46.9
+
+Time = 47
+
+Time = 47.1
+
+Time = 47.2
+
+Time = 47.3
+
+Time = 47.4
+
+Time = 47.5
+
+Time = 47.6
+
+Time = 47.7
+
+Time = 47.8
+
+Time = 47.9
+
+Time = 48
+
+Time = 48.1
+
+Time = 48.2
+
+Time = 48.3
+
+Time = 48.4
+
+Time = 48.5
+
+Time = 48.6
+
+Time = 48.7
+
+Time = 48.8
+
+Time = 48.9
+
+Time = 49
+
+Time = 49.1
+
+Time = 49.2
+
+Time = 49.3
+
+Time = 49.4
+
+Time = 49.5
+
+Time = 49.6
+
+Time = 49.7
+
+Time = 49.8
+
+Time = 49.9
+
+Time = 50
+
+End
+
