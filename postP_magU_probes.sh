@@ -3,6 +3,10 @@
 echo -e ""
 echo "postprocessing for magU probes evaluation"
 
+if [ -d ../0 ]; then
+    mv ../0 ../0.bak
+fi
+
 ## Prüfen ob field "magU" existiert, wenn nicht wird "magU" berechnet.
 if [ ! -f ../ERSTES_ZEITVERZEICHINS/magU && ! -f ../ERSTES_ZEITVERZEICHINS/mag(U) ]; then #!!!
     cd ..
