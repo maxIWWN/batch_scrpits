@@ -14,6 +14,7 @@ if [ -d ./probes ]; then
     if [ "$ans1" == "y" ]; then
         echo "sampling and writing to file: probes_output"
         echo "..."
+        rm -r probes
         cd ..
         probeLocations > postProcessing/magU_probes/probes_output
         cd postProcessing
