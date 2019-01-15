@@ -3,20 +3,24 @@
 echo -e ""
 echo "postprocessing for magU probes evaluation"
 
-# if [ -d ../0 ]; then
-#     mv ../0 ../0.bak
-# fi
+if [ -d ../0 ]; then
+    mv ../0 ../0.bak
+fi
 
 ## Prüfen ob field "magU" existiert, wenn nicht wird "magU" berechnet.
-# if [ ! -f ../ERSTES_ZEITVERZEICHINS/magU && ! -f ../ERSTES_ZEITVERZEICHINS/mag(U) ]; then #!!!
-#     cd ..
-#     ## OF 2.3.1:
-#     foamCalc mag U > postProcessing/magU_calc_temp
-#     ## OF 5.0:
-#     #postProcess -func 'mag(U)' > postProcessing/magU_calc_temp
-#     cd postProcessing
-#     rm magU_calc_temp
-# fi
+
+#get the second (alphabetically) directory, expected to get 0.1 or the like
+firstTimeDir=$(ls ../ | tail -n+2 | head -n1)
+
+if [ ! -f ../$firstTimeDir/magU && ! -f ../$firstTimeDir/mag(U) ]; then #!!!
+    cd ..
+    ## OF 2.3.1:
+    foamCalc mag U > postProcessing/magU_calc_temp
+    ## OF 5.0:
+    #postProcess -func 'mag(U)' > postProcessing/magU_calc_temp
+    cd postProcessing
+    rm magU_calc_temp
+fi
 
 if [ ! -d ./magU_probes ]; then
     mkdir magU_probes
@@ -24,23 +28,23 @@ else
     rm magU_probes/*
 fi
 
-# if [ -d ./probes ]; then
-#     read -p "-> The probes directory already exists. Do you want to run probeLocations again (y/n)? " ans1
-#     if [ "$ans1" == "y" ]; then
-#         echo "sampling and writing to file: probes_output"
-#         echo "..."
-#         rm -r probes
-#         cd ..
-#         probeLocations > postProcessing/magU_probes/probes_output
-#         cd postProcessing
-#     fi
-# else
-#     echo "sampling and writing to file: probes_output"
-#     echo "..."
-#     cd ..
-#     probeLocations > postProcessing/magU_probes/probes_output
-#     cd postProcessing
-# fi
+if [ -d ./probes ]; then
+    read -p "-> The probes directory already exists. Do you want to run probeLocations again (y/n)? " ans1
+    if [ "$ans1" == "y" ]; then
+        echo "sampling and writing to file: probes_output"
+        echo "..."
+        rm -r probes
+        cd ..
+        probeLocations > postProcessing/magU_probes/probes_output
+        cd postProcessing
+    fi
+else
+    echo "sampling and writing to file: probes_output"
+    echo "..."
+    cd ..
+    probeLocations > postProcessing/magU_probes/probes_output
+    cd postProcessing
+fi
 
 #get the name of the first directory in postProcessing/probes
 timeDir=$(ls probes/ | head -n 1)
