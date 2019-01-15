@@ -1,5 +1,9 @@
 #!/bin/bash
 
+if [ -d ../0 ]; then
+    mv ../0 ../0.bak
+fi
+
 echo -e "\n"
 echo "sample for water level evaluation"
 
