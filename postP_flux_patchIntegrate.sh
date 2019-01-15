@@ -1,5 +1,9 @@
 #!/bin/bash
 
+if [ -d ../0 ]; then
+    mv ../0 ../0.bak
+fi
+
 if [ ! -d ./flux_patchIntegrate ]; then
 	mkdir flux_patchIntegrate
 fi
