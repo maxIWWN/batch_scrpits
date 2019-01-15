@@ -3,6 +3,17 @@
 echo -e ""
 echo "postprocessing for magU probes evaluation"
 
+## Prüfen ob field "magU" existiert, wenn nicht wird "magU" berechnet.
+if [ ! -f ../*/magU || ! -f ../*/mag(U) ]; then #!!!
+    cd ..
+    ## OF 2.3.1:
+    foamCalc mag U > postProcessing/magU_calc_temp
+    ## OF 5.0:
+    #postProcess -func 'mag(U)' > postProcessing/magU_calc_temp
+    cd postProcessing
+    rm magU_calc_temp 
+fi
+
 if [ ! -d ./magU_probes ]; then
     mkdir magU_probes
 else
