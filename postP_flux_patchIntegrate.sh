@@ -39,19 +39,27 @@ gnuplot <<- EOF
     outfile = 'flux_patchIntegrate/flux_patchIntegrate_diagram.png'
     set output outfile
     patches = system('cat flux_patchIntegrate/existingPatches')
+    numPatches = system('wc -l < flux_patchIntegrate/existingPatches')
+    array meanValArr[numPatches]
+    array patchesArr[numPatches]
     set print "flux_patchIntegrate/StatDat.dat"
+    i = 1
     do for [patch in patches] {
         stats  'flux_patchIntegrate/table_phiWater_'.patch u 2 nooutput ;
         print STATS_mean
+        patchesArr[i] = patch
+        meanValArr[i] = STATS_mean
+        i = i +1
     }
     set print
-    meanVArr = system('cat flux_patchIntegrate/StatDat.dat')
     system('paste flux_patchIntegrate/existingPatches flux_patchIntegrate/StatDat.dat > flux_patchIntegrate/meanValues.txt')
     print 'Mean values printed in file: flux_patchIntegrate/meanValues.txt'
     set key noenhanced
     set key outside
-    plot for [patch in patches] 'flux_patchIntegrate/table_phiWater_'.patch using 1:2 with linespoints title patch, \
-        for [m in meanVArr] m+0 title m
+    set cbrange [0:100]
+    unset colorbox
+    plot for [i=1:numPatches] 'flux_patchIntegrate/table_phiWater_'.patchesArr[i] using 1:2 with linespoints palette cb (i-1)*(100/numPatches) title patchesArr[i], \
+        for [i=1:numPatches] meanValArr[i] palette cb (i-1)*(100/numPatches) title sprintf('%1.3f',meanValArr[i])
     print 'plot image to: '.outfile
 EOF
 
