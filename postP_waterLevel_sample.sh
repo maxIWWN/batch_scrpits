@@ -36,22 +36,25 @@ fi
 echo "processing data"
 echo "..."
 
-## Zeitdatei erstellen  
+## Zeitdatei erstellen
 grep -F 'Time = ' waterLevel_sample/sample_output > waterLevel_sample/fltimes
 grep -o '[^=^ ]\+$' waterLevel_sample/fltimes > waterLevel_sample/existingTimes
 
+# # the cd sets/* doesn't work for my newer version of bash :(
+# fDir=$(ls sets/ | head -n1)
+# cd sets/$fDir
 ## Liste der sampling lines
 cd sets/*
 ls | grep -F "_alpha.water.xy" | sed 's/_alpha.water.xy//g' > ../../waterLevel_sample/existingLines
 cd ../..
 
-## Ausdünnung der aufgenommen Werte 
+## Ausdünnung der aufgenommen Werte
 for i in ./sets/*/*.xy; do
 	sed -i '/e-/d' $i
 	sed -i '/\s0$/d' $i
 done
 
-## Ausdünnung aufgenommen Werte 
+## Ausdünnung aufgenommen Werte
 for i in ./sets/*/*.xy; do
 	awk '{if (NR>1 && $2 < 0.5 && prev2 > 0.5) {print prev1, prev2; print $1, $2} prev1=$1; prev2=$2}' $i > $i.out1
 done
@@ -62,7 +65,7 @@ for i in ./sets/*/*.out1; do
 	tail -n 2 $i > $i.out2
 done
 
-## Interpolation des z-Wertes der WSP-Lage auf exakt 0.5 (alpha.water)  
+## Interpolation des z-Wertes der WSP-Lage auf exakt 0.5 (alpha.water)
 for i in ./sets/*/*.out2; do
 	awk '{if (NR>1) {x=0.5; x2=$2; y2=$1; y=(y2-y1)/(x2-x1)*(x-x1)+y1; print y, x} x1=$2; y1=$1}' $i > $i.out3
 done
@@ -100,12 +103,35 @@ gnuplot <<- EOF
     set output outfile
     set key noenhanced
     lines = system('cat waterLevel_sample/existingLines')
-    plot for [line in lines] 'waterLevel_sample/table_waterLevel_'.line with linespoints title line
+    numLines = system('wc -l < waterLevel_sample/existingLines')
+    array linesArr[numLines]
+    array meanValArr[numLines]
+    set print 'waterLevel_sample/StatDat.dat'
+    i = 1
+    do for [line in lines] {
+        stats  'waterLevel_sample/table_waterLevel_'.line u 2 nooutput ;
+        print STATS_mean
+        linesArr[i] = line
+        meanValArr[i] = STATS_mean
+        i = i + 1
+    }
+    set print
+    system('paste waterLevel_sample/existingLines waterLevel_sample/StatDat.dat > waterLevel_sample/meanValues.txt')
+    print 'Mean values printed in file: waterLevel_sample/meanValues.txt'
+
+    set key noenhanced
+    set key outside
+    set cbrange [0:100]
+    unset colorbox
+    plot for [i=1:numLines] 'waterLevel_sample/table_waterLevel_'.linesArr[i] with linespoints palette cb (i-1)*(100/numLines) title linesArr[i], \
+        for [i=1:numLines] meanValArr[i] palette cb (i-1)*(100/numLines) title sprintf('%1.3f',meanValArr[i])
+
     print 'plot image generated: '.outfile
 EOF
 
 rm waterLevel_sample/existingTimes
 rm waterLevel_sample/existingLines
+rm waterLevel_sample/StatDat.dat
 
 echo "done"
 echo -e ""

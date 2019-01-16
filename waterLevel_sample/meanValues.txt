@@ -1,0 +1,9 @@
+verticalLine1	2.020395
+verticalLine2	2.0585
+verticalLine3	2.080415
+verticalLine4	1.8408875
+verticalLine5	1.8568625
+verticalLine6	1.8770075
+verticalLine7	1.6543625
+verticalLine8	1.648805
+verticalLine9	1.696335
