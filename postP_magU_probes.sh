@@ -12,7 +12,7 @@ fi
 #get the second (alphabetically) directory, expected to get 0.1 or the like
 firstTimeDir=$(ls ../ | tail -n+2 | head -n1)
 
-if [ ! -f ../$firstTimeDir/magU && ! -f ../$firstTimeDir/mag(U) ]; then #!!!
+if [ ! -f ../$firstTimeDir/magU && ! -f ../$firstTimeDir/mag(U) ]; then
     cd ..
     ## OF 2.3.1:
     foamCalc mag U > postProcessing/magU_calc_temp
@@ -66,12 +66,13 @@ gnuplot <<- EOF
     numOfPoints = numOfPoints-1
     ###MITTELWERT
     # get the mean for each point and print it to a file StatDat.dat
-    array meanArr[numOfPoints]
+    #array meanArr[numOfPoints]
+    meanArr=''
     set print "StatDat.dat"
     do for [i=2:numOfPoints+1] {
       stats  'probes/'.firstTimeDir.'/magU' u i nooutput ;
       print STATS_mean
-      meanArr[i-1] = STATS_mean
+      meanArr = sprintf('%s %.3f',meanArr,STATS_mean)
     }
     set print
     # transpose StatDat.dat file and append it to the probed files (slow, but for the moment the only solution :( )
@@ -89,7 +90,7 @@ gnuplot <<- EOF
     unset colorbox
     set cbrange [0:100]
     plot for [i=2:numOfPoints+1] 'dataToPlot' using 1:i with linespoints palette cb (i-2)*(100/numOfPoints) title 'point '.(i-1),\
-        for [i=numOfPoints+2:(numOfPoints*2)+1] 'dataToPlot' using 1:i with lines palette cb (i-numOfPoints-2)*(100/numOfPoints) title sprintf('%1.3f',meanArr[i-numOfPoints-1])
+        for [i=numOfPoints+2:(numOfPoints*2)+1] 'dataToPlot' using 1:i with lines palette cb (i-numOfPoints-2)*(100/numOfPoints) title word(meanArr,i-numOfPoints-1)
     print 'plot image to: '.outfile
 EOF
 
