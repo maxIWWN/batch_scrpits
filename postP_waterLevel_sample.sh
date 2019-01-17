@@ -40,7 +40,7 @@ echo "..."
 grep -F 'Time = ' waterLevel_sample/sample_output > waterLevel_sample/fltimes
 grep -o '[^=^ ]\+$' waterLevel_sample/fltimes > waterLevel_sample/existingTimes
 
-# # the cd sets/* doesn't work for my newer version of bash :(
+# # the cd sets/* doesn't work for my newer version of bash 4.4.19 :(
 # fDir=$(ls sets/ | head -n1)
 # cd sets/$fDir
 ## Liste der sampling lines
@@ -104,16 +104,18 @@ gnuplot <<- EOF
     set key noenhanced
     lines = system('cat waterLevel_sample/existingLines')
     numLines = system('wc -l < waterLevel_sample/existingLines')
-    array linesArr[numLines]
-    array meanValArr[numLines]
+    #array linesArr[numLines]
+    #array meanValArr[numLines]
+    linesArr=''
+    meanValArr=''
     set print 'waterLevel_sample/StatDat.dat'
-    i = 1
+    #i = 1
     do for [line in lines] {
         stats  'waterLevel_sample/table_waterLevel_'.line u 2 nooutput ;
         print STATS_mean
-        linesArr[i] = line
-        meanValArr[i] = STATS_mean
-        i = i + 1
+        linesArr = sprintf("%s %s",linesArr,line)
+        meanValArr = sprintf("%s %.3f",meanValArr,STATS_mean)
+        #i = i + 1
     }
     set print
     system('paste waterLevel_sample/existingLines waterLevel_sample/StatDat.dat > waterLevel_sample/meanValues.txt')
@@ -123,8 +125,8 @@ gnuplot <<- EOF
     set key outside
     set cbrange [0:100]
     unset colorbox
-    plot for [i=1:numLines] 'waterLevel_sample/table_waterLevel_'.linesArr[i] with linespoints palette cb (i-1)*(100/numLines) title linesArr[i], \
-        for [i=1:numLines] meanValArr[i] palette cb (i-1)*(100/numLines) title sprintf('%1.3f',meanValArr[i])
+    plot for [i=1:numLines] 'waterLevel_sample/table_waterLevel_'.word(linesArr,i) with linespoints palette cb (i-1)*(100/numLines) title word(linesArr,i), \
+        for [i=1:numLines] word(meanValArr,i)+0 palette cb (i-1)*(100/numLines) title word(meanValArr,i)
 
     print 'plot image generated: '.outfile
 EOF
