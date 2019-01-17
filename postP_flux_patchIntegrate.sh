@@ -40,16 +40,18 @@ gnuplot <<- EOF
     set output outfile
     patches = system('cat flux_patchIntegrate/existingPatches')
     numPatches = system('wc -l < flux_patchIntegrate/existingPatches')
-    array meanValArr[numPatches]
-    array patchesArr[numPatches]
+    #array meanValArr[numPatches]
+    #array patchesArr[numPatches]
+    meanValArr=''
+    patchesArr=''
     set print "flux_patchIntegrate/StatDat.dat"
-    i = 1
+    #i = 1
     do for [patch in patches] {
         stats  'flux_patchIntegrate/table_phiWater_'.patch u 2 nooutput ;
         print STATS_mean
-        patchesArr[i] = patch
-        meanValArr[i] = STATS_mean
-        i = i +1
+        patchesArr = sprintf("%s %s",patchesArr,patch)
+        meanValArr = sprintf("%s %.3f",meanValArr,STATS_mean)
+        #i = i +1
     }
     set print
     system('paste flux_patchIntegrate/existingPatches flux_patchIntegrate/StatDat.dat > flux_patchIntegrate/meanValues.txt')
@@ -58,8 +60,8 @@ gnuplot <<- EOF
     set key outside
     set cbrange [0:100]
     unset colorbox
-    plot for [i=1:numPatches] 'flux_patchIntegrate/table_phiWater_'.patchesArr[i] using 1:2 with linespoints palette cb (i-1)*(100/numPatches) title patchesArr[i], \
-        for [i=1:numPatches] meanValArr[i] palette cb (i-1)*(100/numPatches) title sprintf('%1.3f',meanValArr[i])
+    plot for [i=1:numPatches] 'flux_patchIntegrate/table_phiWater_'.word(patchesArr,i) using 1:2 with linespoints palette cb (i-1)*(100/numPatches) title word(patchesArr,i), \
+        for [i=1:numPatches] word(meanValArr,i)+0 palette cb (i-1)*(100/numPatches) title word(meanValArr,i)
     print 'plot image to: '.outfile
 EOF
 
