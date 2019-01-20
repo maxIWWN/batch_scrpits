@@ -1,37 +1,45 @@
 #!/bin/bash
+## Executes the OF command "probeLocations" for specific definitions in "system/probesDict" to evaluate the velocity (magU) at certain points.
+## ! Execute the script from OF_CASE_DIR/postProcessing/ directory !
+## ! Adjust "OF_CASE_DIR/system/probesDict" file befor evatuation !
 
 echo -e ""
-echo "postprocessing for magU probes evaluation"
+echo "postprocessing for the evaluation of the velocity (magU) at defined probe locations"
+echo "REMINDER: probesDict checked?!"
 
 if [ -d ../0 ]; then
     mv ../0 ../0.bak
 fi
 
-## Prüfen ob field "magU" existiert, wenn nicht wird "magU" berechnet.
+if [ ! -d ./magU_probes ]; then
+    mkdir magU_probes
+else
+    rm magU_probes/!(probes_output)
+fi
 
-#get the second (alphabetically) directory, expected to get 0.1 or the like
-firstTimeDir=$(ls ../ | tail -n+2 | head -n1)
-
-if [ ! -f ../$firstTimeDir/magU && ! -f ../$firstTimeDir/mag(U) ]; then
+## check whether magU exists (at first timestep directory) - if not magU gets calculated
+cd ..
+firstTimeDir=$(ls -d */ | tail -n+2 | head -n1)
+cd postProcessing
+if [ ! -f ../$firstTimeDir/magU ]; then
     cd ..
+    echo "calculating magU ..."
     ## OF 2.3.1:
     foamCalc mag U > postProcessing/magU_calc_temp
     ## OF 5.0:
     #postProcess -func 'mag(U)' > postProcessing/magU_calc_temp
+    #for i in ../[1-9]*/ ; do
+    #    mv $i/mag\(U\) $i/magU
+    #done
     cd postProcessing
     rm magU_calc_temp
 fi
 
-if [ ! -d ./magU_probes ]; then
-    mkdir magU_probes
-else
-    rm magU_probes/*
-fi
-
+## execute probeLocations command
 if [ -d ./probes ]; then
-    read -p "-> The probes directory already exists. Do you want to run probeLocations again (y/n)? " ans1
+    read -p "-> The probes directory already exists. Do you want to run probeLocations again and overwrite old data (y/n)? " ans1
     if [ "$ans1" == "y" ]; then
-        echo "sampling and writing to file: probes_output"
+        echo "executing probeLocations command and writing terminal output to file: probes_output"
         echo "..."
         rm -r probes
         cd ..
@@ -39,18 +47,19 @@ if [ -d ./probes ]; then
         cd postProcessing
     fi
 else
-    echo "sampling and writing to file: probes_output"
+    echo "executing probeLocations command and writing terminal output to file: probes_output"
     echo "..."
     cd ..
     probeLocations > postProcessing/magU_probes/probes_output
     cd postProcessing
 fi
 
-#get the name of the first directory in postProcessing/probes
+echo "postprocessing of probeLocations data ..."
+
+## get the name of the first directory in postProcessing/probes
 timeDir=$(ls probes/ | head -n 1)
 
-## Erstellen eines Diagramms mit GnuPlot
-echo "ploting diagram"
+echo "plotting diagram"
 gnuplot <<- EOF
     set terminal pngcairo size 1600,600 enhanced font 'Verdana,10'
     set title 'velocity probes on selected points'
