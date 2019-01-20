@@ -1,17 +1,22 @@
 #!/bin/bash
+## Executes the OF command "patchIntegrate" for field "alphaPhi10" (OF 5.0) to evaluate the discharge (flux/phi) of water at a certain patch.
+## ! Execute the script from OF_CASE_DIR/postProcessing/ directory once for every patch !
+
+echo -e ""
+echo "postprocessing for the evaluation of the water phase flux at a certain patch"
+echo "REMINDER: only works if field alphaPhi10 is calculated (OF 5.0)!"
 
 if [ -d ../0 ]; then
     mv ../0 ../0.bak
 fi
 
 if [ ! -d ./flux_patchIntegrate ]; then
-	mkdir flux_patchIntegrate
+    mkdir flux_patchIntegrate
 fi
 
-echo -e ""
-echo "postprocessing for phiWater evaluation"
+## execute patchIntegrate command
 read -p "-> Enter name of patch: " patchName
-echo "processing and writing to file: phiWater_${patchName}"
+echo "executing patchIntegrate and writing data to file: phiWater_${patchName}"
 echo "..."
 cd ..
 ## OF 2.3.1:
@@ -20,15 +25,15 @@ patchIntegrate alphaPhi10 "$patchName" > postProcessing/flux_patchIntegrate/phiW
 #postProcess -func 'patchIntegrate(name="$patchName",alphaPhi10)' > postProcessing/flux_patchIntegrate/phiWater_"$patchName"
 cd postProcessing
 
-echo "processing data"
+echo "postprocessing of integrated data ..."
 sed -e s/'Time = 0'//g flux_patchIntegrate/phiWater_"${patchName}" | grep -F 'Time = ' | grep -o '[^=^ ]\+$' > flux_patchIntegrate/time
 grep -F 'Integral of alphaPhi10' flux_patchIntegrate/phiWater_"$patchName" | grep -o '[^=^ ]\+$' | awk '{ print ($1 < 0) ? ($1 * -1) : $1 }' > flux_patchIntegrate/flux
-echo "writing data to file: table_phiWater_${patchName}"
+echo "writing evaluated data to file: table_phiWater_${patchName}"
 paste flux_patchIntegrate/time flux_patchIntegrate/flux > flux_patchIntegrate/table_phiWater_"$patchName"
 rm flux_patchIntegrate/time flux_patchIntegrate/flux
 
 echo "plotting diagram"
-# list all patches that already have a flux vs time file
+## list all patches that already have been evaluated
 ls flux_patchIntegrate | grep -F "table_phiWater_" | sed 's/table_phiWater_//g' > flux_patchIntegrate/existingPatches
 gnuplot <<- EOF
     set terminal pngcairo size 1200,600 enhanced font 'Verdana,10'
@@ -61,7 +66,7 @@ gnuplot <<- EOF
     set cbrange [0:100]
     unset colorbox
     plot for [i=1:numPatches] 'flux_patchIntegrate/table_phiWater_'.word(patchesArr,i) using 1:2 with linespoints palette cb (i-1)*(100/numPatches) title word(patchesArr,i), \
-        for [i=1:numPatches] word(meanValArr,i)+0 palette cb (i-1)*(100/numPatches) title word(meanValArr,i)
+         for [i=1:numPatches] word(meanValArr,i)+0 palette cb (i-1)*(100/numPatches) title word(meanValArr,i)
     print 'plot image to: '.outfile
 EOF
 
